@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Deepa Mehendi Artist | Lucknow</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Satisfy&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Georgia', 'Times New Roman', Times, serif;
+      background: #fff9f5;
+      color: #333;
+      line-height: 1.6;
+      padding-top: 70px; /* Reduced header height for mobile */
+      touch-action: manipulation;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Mobile-Optimized Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      text-align: center;
+      padding: 8px 15px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      z-index: 900;
+      border-bottom: 2px solid #d4af37;
+    }
+
+    .brand-area h2 {
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+      font-size: 20px;
+      color: #4b2e2e;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-area p {
+      margin: 4px 0 0;
+      font-style: italic;
+      color: #d4af37;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    /* Mobile Navigation */
+    nav {
+      margin-top: 8px;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    nav a {
+      margin: 0 8px;
+      text-decoration: none;
+      color: #4b2e2e;
+      font-weight: 600;
+      font-size: 13px;
+      display: inline-block;
+      padding: 4px 0;
+      position: relative;
+      font-family: 'Playfair Display', serif;
+    }
+
+    nav a:first-child {
+      margin-left: 10px;
+    }
+
+    nav a:last-child {
+      margin-right: 10px;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: #d4af37;
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Main Content */
+    .welcome-box {
+      width: 100%;
+      margin: 10px auto 0;
+      position: relative;
+    }
+
+    .welcome-box video {
+      width: 100%;
+      border-radius: 0;
+      display: block;
+    }
+
+    .section {
+      width: 95%;
+      margin: 20px auto;
+      padding: 15px 0;
+      position: relative;
+    }
+
+    .section h2 {
+      text-align: center;
+      color: #4b2e2e;
+      margin-bottom: 15px;
+      font-size: 22px;
+      padding: 0 10px;
+      font-family: 'Playfair Display', serif;
+      position: relative;
+    }
+
+    .section h2 i { 
+      margin-right: 6px; 
+      color: #d4af37;
+      font-size: 18px;
+    }
+
+    .section h2::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #d4af37, transparent);
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    .section p {
+      padding: 0 10px;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    /* Gallery Styles - Mobile First */
+    .gallery-preview {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .gallery-preview-row {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .gallery-preview img {
+      width: calc(50% - 5px);
+      max-width: 100%;
+      border-radius: 4px;
+      transition: all 0.3s;
+      cursor: pointer;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border: 1px solid #f0e6d2;
+    }
+
+    .gallery-preview img:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .gallery-button {
+      display: block;
+      margin: 15px auto 10px;
+      padding: 10px 20px;
+      background: #d4af37;
+      border: none;
+      color: white;
+      font-size: 14px;
+      border-radius: 25px;
+      cursor: pointer;
+      width: 90%;
+      max-width: 250px;
+      transition: all 0.3s;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(212, 175, 55, 0.3);
+    }
+
+    .gallery-button:hover {
+      background: #c19b2e;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(212, 175, 55, 0.4);
+    }
+
+    .full-gallery {
+      display: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 5px;
+      margin-bottom: 15px;
+    }
+
+    .full-gallery.show {
+      display: flex;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .full-gallery img {
+      width: calc(50% - 5px);
+      max-width: 100%;
+      border-radius: 4px;
+      transition: all 0.3s;
+      cursor: pointer;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border: 1px solid #f0e6d2;
+    }
+
+    /* Enhanced Lightbox with Zoom Controls */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      touch-action: none;
+    }
+
+    .lightbox.show {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .lightbox-content {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .lightbox-img-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      touch-action: none;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+      transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1);
+      transform-origin: center center;
+      touch-action: none;
+      user-select: none;
+      -webkit-user-drag: none;
+      will-change: transform;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      background: rgba(0,0,0,0.5);
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1002;
+      border: none;
+      outline: none;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10px;
+      z-index: 1001;
+    }
+
+    .lightbox-nav button {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      outline: none;
+    }
+
+    .lightbox-counter {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      color: white;
+      font-size: 14px;
+      background: rgba(0,0,0,0.5);
+      padding: 4px 12px;
+      border-radius: 20px;
+      z-index: 1001;
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Zoom Controls */
+    .lightbox-zoom-controls {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1001;
+    }
+
+    .lightbox-zoom-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      outline: none;
+    }
+
+    .lightbox-zoom-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    .lightbox-zoom-btn:active {
+      background: rgba(255,255,255,0.4);
+    }
+
+    /* Reset Zoom Button */
+    .lightbox-reset-zoom {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(255,255,255,0.2);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      cursor: pointer;
+      z-index: 1001;
+      display: none;
+      transition: background 0.2s;
+      outline: none;
+    }
+
+    .lightbox-reset-zoom.show {
+      display: block;
+    }
+
+    .lightbox-reset-zoom:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    /* Table Styles - Mobile Friendly */
+    .rate-table {
+      margin: 20px auto;
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+      background: white;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .rate-table th, .rate-table td {
+      border: 1px solid #f0e6d2;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .rate-table th {
+      background: #d4af37;
+      color: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .rate-table tr:nth-child(even) {
+      background: #fffaf0;
+    }
+
+    /* FAQ Styles - Mobile Optimized */
+    .faq-container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 10px;
+    }
+
+    .faq-item {
+      margin-bottom: 10px;
+      background: #fff;
+      border-radius: 6px;
+      padding: 12px 15px;
+      cursor: pointer;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      border-left: 3px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .faq-item:hover {
+      background: #fffaf0;
+      border-left: 3px solid #f0e6d2;
+    }
+
+    .faq-item.open {
+      border-left: 3px solid #d4af37;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .faq-question {
+      font-size: 15px;
+      color: #4b2e2e;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      font-size: 14px;
+      color: #555;
+      margin-top: 0;
+      line-height: 1.5;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 500px;
+      margin-top: 8px;
+    }
+
+    .faq-item .icon {
+      transition: transform 0.3s ease;
+      font-size: 12px;
+      color: #d4af37;
+    }
+
+    .faq-item.open .icon {
+      transform: rotate(180deg);
+    }
+
+    /* Video Styles */
+    .video-container {
+      position: relative;
+      width: 95%;
+      margin: 20px auto;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .video-container video {
+      width: 100%;
+      display: block;
+    }
+
+    /* Review Styles - Horizontal Scroll */
+    .reviews-section {
+      padding: 15px 0;
+    }
+
+    .review-scroll-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding: 15px 10px;
+      scroll-snap-type: x mandatory;
+      margin: 0 auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .review-scroll-container video {
+      flex: 0 0 auto;
+      width: 85vw;
+      scroll-snap-align: start;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    /* WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: all 0.3s;
+      animation: pulse 2s infinite;
+    }
+
+    /* Footer - Mobile Optimized */
+    footer {
+      text-align: center;
+      padding: 20px 15px;
+      color: #4b2e2e;
+      font-size: 13px;
+      background: #fffaf0;
+      border-top: 1px solid #f0e6d2;
+      margin-top: 30px;
+    }
+
+    footer a {
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    footer a:hover {
+      color: #4b2e2e;
+      text-decoration: underline;
+    }
+
+    .footer-contact {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-contact i {
+      color: #d4af37;
+      font-size: 12px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    /* Desktop Adjustments */
+    @media (min-width: 768px) {
+      body {
+        padding-top: 80px;
+      }
+
+      header {
+        padding: 10px 20px;
+      }
+
+      .brand-area h2 {
+        font-size: 24px;
+      }
+
+      .brand-area p {
+        font-size: 14px;
+      }
+
+      nav a {
+        font-size: 14px;
+        margin: 0 12px;
+      }
+
+      .section h2 {
+        font-size: 26px;
+      }
+
+      .section p {
+        font-size: 16px;
+      }
+
+      .gallery-preview img {
+        width: calc(33.33% - 10px);
+      }
+
+      .full-gallery img {
+        width: calc(33.33% - 10px);
+      }
+
+      .rate-table {
+        font-size: 14px;
+      }
+
+      .rate-table th, .rate-table td {
+        padding: 10px;
+      }
+
+      .review-scroll-container video {
+        width: 300px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .full-gallery img {
+        width: calc(25% - 10px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="brand-area">
+      <h2>Deepa Mehendi Artist</h2>
+      <p>Bridal & Traditional Mehendi Specialist</p>
+    </div>
+    <nav>
+      <a href="#design-gallery"><i class="fas fa-images"></i> Gallery</a>
+      <a href="#guest-gallery"><i class="fas fa-users"></i> Guest Gallery</a>
+      <a href="#colour-gallery"><i class="fas fa-palette"></i> Colours</a>
+      <a href="#packages"><i class="fas fa-list"></i> Packages</a>
+      <a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div id="main-content">
+    <!-- Welcome Video -->
+    <div class="welcome-box" id="welcome">
+      <video autoplay muted loop playsinline id="w-video">
+        <source src="index/w.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Certified Artist Section -->
+    <section class="section">
+      <h2><i class="fas fa-award"></i>Certified Artist</h2>
+      <p>Certified with WedMeGood. Our team is hardworking and talented to make your events memorable with exquisite mehendi designs that last.</p>
+    </section>
+    
+    <!-- Timelapse Video -->
+    <div class="video-container">
+      <video src="timelaps/T.mp4" poster="timelaps/t.jpeg" controls playsinline></video>
+    </div>
+
+    <!-- Signature Mehendi Section -->
+    <section class="section">
+      <h2><i class="fas fa-feather-alt"></i>Signature Mehendi</h2>
+      <p>
+        We create Traditional, Royal, and Arabic Mehendi designs filled with beauty and emotion – perfect for your special day. Each design is meticulously crafted to complement your bridal look.
+      </p>
+    </section>
+
+    <!-- Design Gallery -->
+    <section class="section" id="design-gallery">
+      <h2><i class="fas fa-images"></i>Design Gallery</h2>
+      <div class="gallery-preview" id="design-preview">
+        <div class="gallery-preview-row">
+          <img src="images/H2.jpeg" alt="Bridal Mehendi Design" onclick="zoomImage(this)">
+          <img src="images/H3.jpeg" alt="Bridal Mehendi Design" onclick="zoomImage(this)">
+        </div>
+        <button onclick="toggleGallery('design')" class="gallery-button">View Full Design Gallery</button>
+      </div>
+      <div id="full-design-gallery" class="full-gallery"></div>
+    </section>
+
+    <!-- Guest Gallery -->
+    <section class="section" id="guest-gallery">
+      <h2><i class="fas fa-users"></i>Guest Gallery</h2>
+      <div class="gallery-preview" id="guest-preview">
+        <div class="gallery-preview-row">
+          <img src="guest/G1.jpeg" alt="Guest Mehendi Design" onclick="zoomImage(this)">
+          <img src="guest/G2.jpeg" alt="Guest Mehendi Design" onclick="zoomImage(this)">
+        </div>
+        <button onclick="toggleGallery('guest')" class="gallery-button">View Guest Design Collection</button>
+      </div>
+      <div id="full-guest-gallery" class="full-gallery"></div>
+    </section>
+
+    <!-- Colour Gallery -->
+    <section class="section" id="colour-gallery">
+      <h2><i class="fas fa-palette"></i>Our Mehendi Colours</h2>
+      <p>Explore our range of beautiful, long-lasting mehendi colors that enhance your designs.</p>
+      <div class="gallery-preview" id="colour-preview">
+        <div class="gallery-preview-row">
+          <img src="colour/C1.jpeg" alt="Mehendi Colour Sample" onclick="zoomImage(this)">
+          <img src="colour/C2.jpeg" alt="Mehendi Colour Sample" onclick="zoomImage(this)">
+        </div>
+        <button onclick="toggleGallery('colour')" class="gallery-button">Explore More Colours</button>
+      </div>
+      <div id="full-colour-gallery" class="full-gallery"></div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="section" id="packages">
+      <h2><i class="fas fa-list"></i>Our Offerings & Packages</h2>
+      <p>Customized packages available for weddings, engagements, and other special occasions.</p>
+      <table class="rate-table">
+        <tr><th>Offerings</th><th>Rates</th></tr>
+        <tr><td>Bridal Mehendi (Full Arms & Feet)</td><td>₹5100 onwards</td></tr>
+        <tr><td>Bridal Mehendi (Hands Only)</td><td>₹3500 onwards</td></tr>
+        <tr><td>Guest Mehendi – Traditional</td><td>₹500 per person</td></tr>
+        <tr><td>Guest Mehendi – Arabic</td><td>₹300 per person</td></tr>
+        <tr><th colspan="2">Popular Packages</th></tr>
+        <tr><td>1 Bride + 10 Guests</td><td>₹11,000</td></tr>
+        <tr><td>1 Bride + 20 Guests</td><td>₹15,000</td></tr>
+        <tr><td>1 Bride + 50 Guests</td><td>₹25,000</td></tr>
+      </table>
+      <p style="text-align:center; font-weight:600; font-size:15px; color:#d4af37; padding: 0 15px;">
+        Custom packages available for destination weddings and large events. Contact us for personalized quotes.
+      </p>
+    </section>
+
+    <!-- Mehendi Emotion Video -->
+    <div class="video-container">
+      <video width="100%" autoplay muted loop playsinline id="nv-video">
+        <source src="NV.mp4" type="video/mp4">
+      </video>
+    </div>
+    <p style="text-align:center; font-size:16px; font-style:italic; font-weight:600; color:#4b2e2e; margin-top:-10px; padding: 0 15px; font-family: 'Playfair Display', serif;">
+      "Mehendi is not just an art, it's an emotion that celebrates love and tradition."
+    </p>
+
+    <!-- FAQ Section -->
+    <div class="section" id="faq">
+      <h2><i class="fas fa-question-circle"></i>Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <div class="faq-question">
+            Is the advance amount refundable? <i class="fas fa-chevron-down icon"></i>
+          </div>
+          <div class="faq-answer">No, the advance amount is not refundable as it secures your booking date and time slot.</div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <div class="faq-question">
+            When should I book my mehendi appointment? <i class="fas fa-chevron-down icon"></i>
+          </div>
+          <div class="faq-answer">We recommend booking at least 2-3 weeks in advance, especially during wedding seasons. For popular dates, booking 1-2 months ahead is advisable.</div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <div class="faq-question">
+            Do you provide mehndi services outside Lucknow? <i class="fas fa-chevron-down icon"></i>
+          </div>
+          <div class="faq-answer">Yes, we provide mehndi services outside Lucknow with additional travel charges depending on the location and accommodation requirements.</div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <div class="faq-question">
+            Are the mehendi colours natural and safe? <i class="fas fa-chevron-down icon"></i>
+          </div>
+          <div class="faq-answer">Absolutely! We use only natural, high-quality mehendi that is safe for all skin types. Our colors are free from harmful chemicals and provide a rich, dark stain.</div>
+        </div>
+        
+        <div class="faq-item" onclick="toggleFAQ(this)">
+          <div class="faq-question">
+            How long does the mehendi application take? <i class="fas fa-chevron-down icon"></i>
+          </div>
+          <div class="faq-answer">Bridal mehendi typically takes 3-5 hours depending on the complexity of design. Guest mehendi takes about 30-60 minutes per person.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thanks Section -->
+    <section class="section">
+      <h2><i class="fas fa-heart"></i>Special Thanks</h2>
+      <p>Thank you for trusting us to be part of your celebrations. We're honored to contribute to making your special moments even more beautiful with our art.</p>
+    </section>
+
+    <!-- Reviews -->
+    <div class="section reviews-section">
+      <h2><i class="fas fa-star"></i>Client Testimonials</h2>
+      <div class="review-scroll-container">
+        <video src="thanks/1.mp4" poster="thanks/1p.jpeg" controls playsinline></video>
+        <video src="thanks/2.mp4" poster="thanks/2p.jpeg" controls playsinline></video>
+        <video src="thanks/3.mp4" poster="thanks/3p.jpeg" controls playsinline></video>
+        <video src="thanks/4.mp4" poster="thanks/4p.jpeg" controls playsinline></video>
+      </div>
+    </div>
+
+    <!-- Artist Section -->
+    <section class="section">
+      <h2><i class="fas fa-user"></i>About The Artist</h2>
+      <p>Deepa, a passionate mehendi artist with over 12 years of experience in bridal and festive mehendi, believes in creating lasting memories with every intricate stroke. Trained in traditional Indian and contemporary Arabic styles, she blends artistry with precision to deliver designs that enhance your natural beauty. Making her one of Lucknow's most sought-after mehendi artists.</p>
+    </section>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/918874896711?text=Hi%20Deepa%20Ji%2C%20I%20would%20like%20to%20book%20a%20mehendi%20appointment.%20Please%20share%20details." 
+      class="whatsapp-float" 
+      target="_blank" 
+      title="Book on WhatsApp"
+      aria-label="Contact via WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-contact">
+        <i class="fas fa-phone-alt"></i>
+        <strong>Contact:</strong> <a href="https://wa.me/918874896711">+91 8874 896711</a>
+      </div>
+      <div style="margin-bottom: 10px;">
+        <a href="mailto:deepamehendiartist@gmail.com" style="display:inline-flex;align-items:center;gap:5px;">
+          <i class="fas fa-envelope"></i> deepamehendiartist@gmail.com
+        </a>
+      </div>
+      <div style="margin-bottom: 10px;">
+        <a href="https://pinterest.com">Visit Pinterest</a>
+      </div>
+      <div>
+        &copy; 2025 Deepa Mehendi Artist Lucknow. All rights reserved.
+      </div>
+    </footer>
+  </div>
+
+  <!-- Enhanced Lightbox with Zoom Controls -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close lightbox">&times;</button>
+      <div class="lightbox-counter" id="lightbox-counter"></div>
+      <div class="lightbox-img-container">
+        <img src="" alt="" class="lightbox-img" id="lightbox-img" />
+      </div>
+      <div class="lightbox-nav">
+        <button onclick="navigateLightbox(-1)" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+        <button onclick="navigateLightbox(1)" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="lightbox-zoom-controls">
+        <button class="lightbox-zoom-btn" onclick="zoomImageIn()" aria-label="Zoom in"><i class="fas fa-search-plus"></i></button>
+        <button class="lightbox-zoom-btn" onclick="zoomImageOut()" aria-label="Zoom out"><i class="fas fa-search-minus"></i></button>
+      </div>
+      <button class="lightbox-reset-zoom" onclick="resetZoom()" aria-label="Reset zoom">Reset Zoom</button>
+    </div>
+  </div>
+
+  <script>
+    // Toggle FAQ function
+    function toggleFAQ(el) {
+      document.querySelectorAll('.faq-item').forEach(item => {
+        if (item !== el) {
+          item.classList.remove('open');
+        }
+      });
+      el.classList.toggle('open');
+    }
+
+    // Enhanced Lightbox functionality with zoom controls
+    let currentImages = [];
+    let currentIndex = 0;
+    let currentScale = 1;
+    let isDragging = false;
+    let startX, startY, translateX = 0, translateY = 0;
+    let lastTouchDistance = 0;
+
+    function openLightbox(images, index) {
+      currentImages = images;
+      currentIndex = index;
+      currentScale = 1;
+      translateX = 0;
+      translateY = 0;
+      updateLightboxImage();
+      document.getElementById('lightbox').classList.add('show');
+      document.body.style.overflow = 'hidden';
+      updateCounter();
+      updateResetButton();
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('show');
+      document.body.style.overflow = '';
+    }
+
+    function updateLightboxImage() {
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = currentImages[currentIndex];
+      lightboxImg.alt = 'Gallery image ' + (currentIndex + 1);
+      lightboxImg.style.transform = 'scale(1) translate(0, 0)';
+      currentScale = 1;
+      translateX = 0;
+      translateY = 0;
+      updateCounter();
+      updateResetButton();
+    }
+
+    function updateCounter() {
+      document.getElementById('lightbox-counter').textContent = `${currentIndex + 1} / ${currentImages.length}`;
+    }
+
+    function navigateLightbox(direction) {
+      currentIndex += direction;
+      if (currentIndex < 0) currentIndex = currentImages.length - 1;
+      if (currentIndex >= currentImages.length) currentIndex = 0;
+      updateLightboxImage();
+    }
+
+    // Image zoom functionality
+    function zoomImage(img) {
+      // Get all images in the same gallery
+      const gallery = img.closest('.gallery-preview') || img.closest('.full-gallery');
+      const images = Array.from(gallery.querySelectorAll('img')).map(i => i.src);
+      const index = images.indexOf(img.src);
+      
+      openLightbox(images, index);
+    }
+
+    // Zoom in function
+    function zoomImageIn() {
+      const lightboxImg = document.getElementById('lightbox-img');
+      currentScale = Math.min(currentScale * 1.2, 4);
+      lightboxImg.style.transform = `scale(${currentScale}) translate(${translateX}px, ${translateY}px)`;
+      updateResetButton();
+    }
+
+    // Zoom out function
+    function zoomImageOut() {
+      const lightboxImg = document.getElementById('lightbox-img');
+      currentScale = Math.max(currentScale / 1.2, 1);
+      
+      // If we're back to 1:1 scale, reset translation too
+      if (currentScale === 1) {
+        translateX = 0;
+        translateY = 0;
+      }
+      
+      lightboxImg.style.transform = `scale(${currentScale}) translate(${translateX}px, ${translateY}px)`;
+      updateResetButton();
+    }
+
+    // Reset zoom and position
+    function resetZoom() {
+      const lightboxImg = document.getElementById('lightbox-img');
+      currentScale = 1;
+      translateX = 0;
+      translateY = 0;
+      lightboxImg.style.transform = 'scale(1) translate(0, 0)';
+      updateResetButton();
+    }
+
+    // Show/hide reset button based on zoom state
+    function updateResetButton() {
+      const resetBtn = document.querySelector('.lightbox-reset-zoom');
+      if (currentScale > 1 || translateX !== 0 || translateY !== 0) {
+        resetBtn.classList.add('show');
+      } else {
+        resetBtn.classList.remove('show');
+      }
+    }
+
+    // Gallery data
+    const galleries = {
+      design: {
+        previewId: 'design-preview',
+        galleryId: 'full-design-gallery',
+        images: [
+          ...Array.from({length: 16}, (_, i) => `images/H${i+2}.jpeg`),
+          ...Array.from({length: 13}, (_, i) => `images/L${i+1}.jpeg`)
+        ],
+        buttonText: {
+          more: 'View Full Design Gallery',
+          less: 'Close Design Gallery'
+        }
+      },
+      guest: {
+        previewId: 'guest-preview',
+        galleryId: 'full-guest-gallery',
+        images: [
+          ...Array.from({length: 13}, (_, i) => `guest/G${i+1}.jpeg`),
+          ...Array.from({length: 8}, (_, i) => `guest/S${i+1}.jpeg`)
+        ],
+        buttonText: {
+          more: 'View Guest Design Collection',
+          less: 'Close Guest Gallery'
+        }
+      },
+      colour: {
+        previewId: 'colour-preview',
+        galleryId: 'full-colour-gallery',
+        images: Array.from({length: 14}, (_, i) => `colour/C${i+1}.jpeg`),
+        buttonText: {
+          more: 'Explore More Colours',
+          less: 'Close Colour Gallery'
+        }
+      }
+    };
+
+    // Currently open gallery
+    let currentOpenGallery = null;
+
+    // Toggle gallery function
+    function toggleGallery(galleryType) {
+      const gallery = galleries[galleryType];
+      const galleryEl = document.getElementById(gallery.galleryId);
+      const previewEl = document.getElementById(gallery.previewId);
+      const button = previewEl.querySelector('.gallery-button');
+      
+      // If this gallery is already open, close it
+      if (galleryEl.classList.contains('show')) {
+        galleryEl.classList.remove('show');
+        previewEl.style.display = 'flex';
+        button.textContent = gallery.buttonText.more;
+        currentOpenGallery = null;
+        return;
+      }
+      
+      // Close any other open gallery first
+      if (currentOpenGallery && currentOpenGallery !== galleryType) {
+        const currentGallery = galleries[currentOpenGallery];
+        const currentGalleryEl = document.getElementById(currentGallery.galleryId);
+        const currentPreviewEl = document.getElementById(currentGallery.previewId);
+        const currentButton = currentPreviewEl.querySelector('.gallery-button');
+        
+        currentGalleryEl.classList.remove('show');
+        currentPreviewEl.style.display = 'flex';
+        currentButton.textContent = currentGallery.buttonText.more;
+      }
+      
+      // If the gallery is empty, populate it
+      if (galleryEl.children.length === 0) {
+        galleryEl.innerHTML = "";
+        gallery.images.forEach((src, index) => {
+          const img = document.createElement("img");
+          img.src = src;
+          img.alt = galleryType.charAt(0).toUpperCase() + galleryType.slice(1) + " Image " + (index + 1);
+          img.onclick = () => {
+            const allImages = Array.from(galleryEl.querySelectorAll('img')).map(i => i.src);
+            openLightbox(allImages, index);
+          };
+          galleryEl.appendChild(img);
+        });
+      }
+      
+      // Show the gallery
+      previewEl.style.display = "none";
+      galleryEl.classList.add('show');
+      button.textContent = gallery.buttonText.less;
+      currentOpenGallery = galleryType;
+      
+      // Scroll to the gallery
+      galleryEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // Close lightbox when clicking outside image
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeLightbox();
+      }
+    });
+
+    // Keyboard navigation for lightbox
+    document.addEventListener('keydown', function(e) {
+      const lightbox = document.getElementById('lightbox');
+      if (lightbox.classList.contains('show')) {
+        if (e.key === 'Escape') {
+          closeLightbox();
+        } else if (e.key === 'ArrowLeft') {
+          navigateLightbox(-1);
+        } else if (e.key === 'ArrowRight') {
+          navigateLightbox(1);
+        } else if (e.key === '+' || e.key === '=') {
+          e.preventDefault();
+          zoomImageIn();
+        } else if (e.key === '-' || e.key === '_') {
+          e.preventDefault();
+          zoomImageOut();
+        } else if (e.key === '0') {
+          resetZoom();
+        }
+      }
+    });
+
+    // Mouse wheel zoom
+    document.getElementById('lightbox-img').addEventListener('wheel', function(e) {
+      e.preventDefault();
+      if (e.deltaY < 0) {
+        zoomImageIn();
+      } else {
+        zoomImageOut();
+      }
+    }, { passive: false });
+
+    // Touch events for lightbox navigation and zoom
+    const lightboxImg = document.getElementById('lightbox-img');
+    
+    // Single touch for dragging
+    lightboxImg.addEventListener('touchstart', function(e) {
+      if (e.touches.length === 1) {
+        isDragging = true;
+        startX = e.touches[0].clientX - translateX;
+        startY = e.touches[0].clientY - translateY;
+      } else if (e.touches.length === 2) {
+        // Calculate distance between two touches
+        lastTouchDistance = Math.hypot(
+          e.touches[0].clientX - e.touches[1].clientX,
+          e.touches[0].clientY - e.touches[1].clientY
+        );
+      }
+    }, { passive: false });
+
+    lightboxImg.addEventListener('touchmove', function(e) {
+      if (e.touches.length === 1 && isDragging && currentScale > 1) {
+        e.preventDefault();
+        translateX = e.touches[0].clientX - startX;
+        translateY = e.touches[0].clientY - startY;
+        lightboxImg.style.transform = `scale(${currentScale}) translate(${translateX}px, ${translateY}px)`;
+        updateResetButton();
+      } else if (e.touches.length === 2) {
+        e.preventDefault();
+        // Calculate new distance between touches
+        const touchDistance = Math.hypot(
+          e.touches[0].clientX - e.touches[1].clientX,
+          e.touches[0].clientY - e.touches[1].clientY
+        );
+        
+        // Calculate zoom factor
+        if (lastTouchDistance > 0) {
+          const scaleFactor = touchDistance / lastTouchDistance;
+          currentScale = Math.min(Math.max(currentScale * scaleFactor, 1), 4);
+          lightboxImg.style.transform = `scale(${currentScale}) translate(${translateX}px, ${translateY}px)`;
+          updateResetButton();
+        }
+        
+        lastTouchDistance = touchDistance;
+      }
+    }, { passive: false });
+
+    lightboxImg.addEventListener('touchend', function() {
+      isDragging = false;
+      lastTouchDistance = 0;
+    });
+
+    // Mouse drag for desktop
+    lightboxImg.addEventListener('mousedown', function(e) {
+      if (currentScale > 1) {
+        isDragging = true;
+        startX = e.clientX - translateX;
+        startY = e.clientY - translateY;
+        e.preventDefault();
+      }
+    });
+
+    document.addEventListener('mousemove', function(e) {
+      if (isDragging) {
+        translateX = e.clientX - startX;
+        translateY = e.clientY - startY;
+        lightboxImg.style.transform = `scale(${currentScale}) translate(${translateX}px, ${translateY}px)`;
+        updateResetButton();
+      }
+    });
+
+    document.addEventListener('mouseup', function() {
+      isDragging = false;
+    });
+
+    // Optimize video loading and autoplay
+    document.addEventListener('DOMContentLoaded', function() {
+      // Preload welcome video
+      const welcomeVideo = document.getElementById('w-video');
+      welcomeVideo.load();
+      welcomeVideo.play().catch(e => console.log('Autoplay prevented:', e));
+      
+      // Set video attributes for better performance
+      const videos = document.querySelectorAll('video');
+      videos.forEach(video => {
+        video.setAttribute('preload', 'auto');
+        video.setAttribute('playsinline', '');
+        video.setAttribute('webkit-playsinline', '');
+        
+        // Unmute on click
+        video.addEventListener('click', function() {
+          if (this.muted) {
+            this.muted = false;
+          }
+          this.play();
+        });
+        
+        // Add aria-label for accessibility
+        if (!video.getAttribute('aria-label')) {
+          video.setAttribute('aria-label', 'Video content');
+        }
+      });
+      
+      // Pause other videos when one plays
+      document.addEventListener('play', function(e) {
+        const allVideos = document.querySelectorAll('video');
+        allVideos.forEach(video => {
+          if (video !== e.target && !video.paused) {
+            video.pause();
+          }
+        });
+      }, true);
+      
+      // Pause videos when they're not in view
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.target.tagName === 'VIDEO') {
+            if (entry.isIntersecting) {
+              if (entry.target.id === 'w-video' || entry.target.id === 'nv-video') {
+                entry.target.play().catch(e => console.log('Autoplay prevented:', e));
+              }
+            } else {
+              entry.target.pause();
+            }
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      document.querySelectorAll('video').forEach(video => {
+        observer.observe(video);
+      });
+    });
+  </script>
+</body>
+</html>
